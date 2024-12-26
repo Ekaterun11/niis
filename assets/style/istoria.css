@@ -1,0 +1,168 @@
+body {
+    font-family: sans-serif;
+    /* Light blue background */
+    margin: 0; /* Remove default body margins */
+    display: flex;
+    flex-direction: column; /* Vertical stacking of elements */
+    min-height: 100vh; /* Ensure the page is at least the screen height */
+  }
+  
+  header {
+    background-image: url('header-image.jpg'); /* Replace with your header image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align items to the bottom of the header */
+    padding-bottom: 20px;
+    background-color: #ffffff;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    margin-bottom: 20px;
+    margin-top: -300px;
+  }
+  .nav-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color:  #1e3b81;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .nav-button:hover {
+    background-color: #0e7482;
+    cursor: pointer;
+  }
+  
+  .institute-name {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: rgb(16, 24, 32);
+   padding-top: 15px;
+    
+  }
+  
+
+
+  .logo img{
+    width: 250px;
+   padding: 10px;
+  
+  }
+  
+  .logo{
+  
+    flex-direction: column;
+    display: flex;
+  }
+
+
+
+
+  .container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    border-right: 1px solid #ffffff;
+    padding-right: 20px;
+    padding-left: 20px;
+   background-color: #1e3b81;
+
+}
+
+.sidebar ul{
+    padding-left: 15px;
+    color: #ffffff;
+    padding-top: 10px;
+}
+
+.sidebar li {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+ .sidebar li:hover{
+    color: #0e7482;
+     text-decoration: underline;
+}
+.sidebar li ul{
+   padding-left: 20px;
+    display: none; /*hide the ul on page load*/
+}
+ .sidebar li.active > ul{
+   display: block; /* toggle ul on click*/
+ }
+
+
+.main-content {
+    flex-grow: 1;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.main-content h2 {
+    text-align: left;
+}
+.year-item {
+    border-bottom: 1px solid #ddd;
+     padding-bottom: 15px;
+     margin-bottom: 15px;
+ }
+.year-item:last-child{
+    border-bottom: none; /* removing border from last element */
+     margin-bottom: 0; /* removing margin from last element */
+    padding-bottom: 0;
+}
+
+.expand-button {
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .expand-button span {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.expand-button.expanded span {
+  transform: rotate(180deg); /*Rotate the arrow*/
+ }
+.additional-content{
+display: none;
+   overflow: hidden;
+    max-height: 0;
+   transition: max-height 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+
+.year-item.expanded .additional-content{
+   display: block;
+     max-height: 1000px;
+     padding-top: 10px; /* Add padding top for better readability */
+ }
+
+.digest-list {
+  overflow: auto;
+   max-height: 500px; /* Initial max height of the digest */
+    transition: max-height 0.3s ease-in-out;
+
+}
+.digest-list:hover{
+   max-height: 600px;
+}
+
